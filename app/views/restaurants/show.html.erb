@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="grid">
+    <%= link_to  "Home", restaurants_path %>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-xs-12 mb-3">
+        <div class="card p-3">
+          <h2><%= @restaurant.name %></h2>
+          <p>Address: <%= @restaurant.address %></p>
+          <p>Phone Number: <%= @restaurant.phone_number %></p>
+          <p>Category: <%= @restaurant.category %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-xs-12 mb-3">
+        <ul class="list-group">
+          <% @restaurant.reviews.each do |review| %>
+            <li class="list-group-item"><%= review.rating %>: <%= review.content %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-xs-12 mb-3">
+        <div class="card p-3">
+          <%= link_to  "Add a comment", new_restaurant_review_path(@restaurant) %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

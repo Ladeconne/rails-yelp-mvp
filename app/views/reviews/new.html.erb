@@ -1,0 +1,16 @@
+
+
+<div class="container mx-auto">
+  <h1>Add a new restaurant</h1>
+  <div class="grid">
+    <div class="row">
+      <div class="col-lg-4 col-md-8 col-xs-12">
+        <%= simple_form_for [@restaurant, @review] do |f| %>
+          <%= f.input :content %>
+          <%= f.input :rating %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

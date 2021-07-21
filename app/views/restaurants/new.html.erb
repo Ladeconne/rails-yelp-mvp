@@ -1,0 +1,17 @@
+
+<div class="container mx-auto">
+  <h1>Add a new restaurant</h1>
+  <div class="grid">
+    <div class="row">
+      <div class="col-lg-4 col-md-8 col-xs-12">
+        <%= simple_form_for @restaurant do |f| %>
+          <%= f.input :name %>
+          <%= f.input :phone_number %>
+          <%= f.input :address %>
+          <%= f.input :category, collection: @categories , prompt: "select your category" %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
